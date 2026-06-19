@@ -31,7 +31,7 @@ npm run tauri build
 
 ## Roadmap / Upcoming features
 1. Themes
-2. More Bell Sounds
+2. More Bell Sounds (in developement)
 3. Better time selection
 4. Linux Support
 
