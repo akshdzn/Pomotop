@@ -1,8 +1,8 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "pomonotch",
+  "productName": "pomotop",
   "version": "0.1.0",
-  "identifier": "com.akshdzn.pomonotch",
+  "identifier": "com.akshdzn.pomotop",
   "build": {
     "beforeDevCommand": "npm run dev",
     "devUrl": "http://localhost:1420",
@@ -12,7 +12,7 @@
   "app": {
     "windows": [
       {
-        "title": "pomonotch",
+        "title": "pomotop",
         "width": 199,
         "height": 41,
         "transparent": true,
