@@ -8,8 +8,33 @@
 
     import bellSound from "./audio/bell.mp3";
     const bellAudio = new Audio(bellSound);
+    import analogBellSound from "./audio/analog_bell.mp3";
+    const analogBellAudio = new Audio(analogBellSound);
 
+    // window pos
     moveWindow(Position.TopCenter);
+
+    // sound selections
+    const soundIndex = [
+        { index: 0 },
+        { index: 1, sound: bellAudio },
+        { index: 2, sound: analogBellAudio },
+    ];
+    let soundSelectedIndex = $state(1);
+    let currentSound = $state(soundIndex[soundSelectedIndex]);
+
+    function soundSelectBackward() {
+        soundSelectedIndex =
+            (soundSelectedIndex - 1 + soundIndex.length) % soundIndex.length;
+        currentSound = soundIndex[soundSelectedIndex];
+        currentSound.sound?.play();
+    }
+
+    function soundSelectForward() {
+        soundSelectedIndex = (soundSelectedIndex + 1) % soundIndex.length;
+        currentSound = soundIndex[soundSelectedIndex];
+        currentSound.sound?.play();
+    }
 
     // window expansion (maximize);
     let isExpanded = $state(false);
@@ -55,7 +80,7 @@
                     clearInterval(timer);
                     currentTime = presetTime;
                     isTimerRunning = false;
-                    bellAudio.play();
+                    currentSound.sound?.play();
                 }
             }, 1000);
         }
@@ -190,6 +215,28 @@
         />
 
         <div class="bottom-bx">
+            <div class="bell-sound-bx">
+                <button
+                    aria-label="sound left"
+                    class="bell-sound-button"
+                    onclick={() => {
+                        soundSelectBackward();
+                    }}
+                >
+                    <img src="/icons/CaretLeft.svg" alt="left" />
+                </button>
+                <div class="bell-sound-display">{currentSound.index}</div>
+                <button
+                    aria-label="sound left"
+                    class="bell-sound-button flipped"
+                    onclick={() => {
+                        soundSelectForward();
+                    }}
+                >
+                    <img src="/icons/CaretLeft.svg" alt="left" />
+                </button>
+            </div>
+
             <button
                 class="exit"
                 aria-label="exit"

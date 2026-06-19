@@ -45,7 +45,7 @@ body {
     gap: 6px;
 
     &.open {
-        height: 120px;
+        height: 115px;
     }
 
     transition: all cubic-bezier(0.31, 0.06, 0.15, 1) 300ms;
@@ -83,7 +83,7 @@ body {
     justify-content: space-evenly;
     align-items: center;
     width: 138px;
-    height: fit-content;
+    height: 29px;
 }
 
 .inputRange {
@@ -172,7 +172,7 @@ body {
 
 .exit {
     all: unset;
-    width: 138px;
+    width: 47px;
     height: 29px;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 12px;
@@ -206,4 +206,47 @@ body {
 .timer-running:hover {
     transform: translate(0, 0);
     opacity: 100%;
+}
+
+.bell-sound-bx {
+    height: 29px;
+    width: 85px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+
+.bell-sound-button {
+    all: unset;
+    width: 21px;
+    height: 29px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 12px 6px 6px 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &.flipped {
+        border-radius: 6px 12px 12px 6px;
+        img {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+.bell-sound-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.bell-sound-display {
+    width: 35px;
+    height: 29px;
+    background-color: rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 800;
+    font-size: 20px;
+    border-radius: 6px;
 }
