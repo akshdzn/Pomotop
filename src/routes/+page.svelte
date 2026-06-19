@@ -11,7 +11,7 @@
 
     moveWindow(Position.TopCenter);
 
-    // window maximize
+    // window expansion
     let isExpanded = $state(false);
     async function toggleExpansion() {
         if (isExpanded) {
