@@ -11,6 +11,7 @@ body {
     box-sizing: border-box;
     height: 100%;
     overflow: hidden;
+    user-select: none;
 }
 
 .container {
@@ -47,7 +48,7 @@ body {
         height: 120px;
     }
 
-    transition: all ease-out 300ms;
+    transition: all cubic-bezier(0.31, 0.06, 0.15, 1) 300ms;
 }
 
 .pomo {
@@ -129,7 +130,7 @@ body {
     background-color: #ff4c4c;
     border-radius: 12px;
 
-    transition: all ease-out 300ms;
+    transition: all cubic-bezier(0.31, 0.06, 0.15, 1) 300ms;
 
     &.active {
         transform: translate(100%);
@@ -144,7 +145,7 @@ body {
     width: calc(85px / 2);
     opacity: 50%;
 
-    transition: all ease-out 300ms;
+    transition: all cubic-bezier(0.31, 0.06, 0.15, 1) 300ms;
 
     &.active {
         opacity: 100%;
@@ -182,4 +183,27 @@ body {
 
 .exit:hover {
     background-color: rgba(255, 255, 255, 0.2);
+}
+
+.mini-mode-text {
+    opacity: 80%;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    text-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 50%);
+    position: absolute;
+    z-index: -1;
+    user-select: none;
+}
+
+.timer-running {
+    transform: translate(0, -65%);
+    opacity: 0%;
+
+    transition: all cubic-bezier(0.31, 0.06, 0.15, 1) 300ms;
+}
+
+.timer-running:hover {
+    transform: translate(0, 0);
+    opacity: 100%;
 }

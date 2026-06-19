@@ -121,7 +121,9 @@
     const tray = await TrayIcon.new(options);
 </script>
 
-<div class="container">
+<div class="mini-mode-text">{formatTime(currentTime)}</div>
+
+<div class={isTimerRunning ? "container timer-running" : "container"}>
     <img class="decor" src="/Decor.svg" alt="decor" />
 
     <div class={isExpanded ? "pomoBX open" : "pomoBX"}>
