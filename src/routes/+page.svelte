@@ -64,14 +64,14 @@
     const presetTime = 1500;
     let currentTime = $state(presetTime);
     let isTimerRunning = $state(false);
+    let isTimerActive = $state(false);
     let timer;
 
     function startTimer() {
         if (!isTimerRunning) {
             isExpanded = false;
             isTimerRunning = true;
-            // currentTime -= 60;
-            currentTime--;
+            isTimerActive = true;
 
             timer = setInterval(() => {
                 currentTime--;
@@ -94,10 +94,11 @@
     }
 
     function resetTimer() {
-        if (isTimerRunning) {
+        if (isTimerRunning || isTimerActive) {
             clearInterval(timer);
             currentTime = presetTime;
             isTimerRunning = false;
+            isTimerActive = false;
         }
     }
 
@@ -153,7 +154,7 @@
 
     <div class={isExpanded ? "pomoBX open" : "pomoBX"}>
         <div class="pomodoro-main-bx">
-            {#if isTimerRunning}
+            {#if isTimerActive}
                 <button
                     class="pomoButton"
                     aria-label="settings"
