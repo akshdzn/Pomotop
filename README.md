@@ -31,9 +31,8 @@ npm run tauri build
 
 ## Roadmap / Upcoming features
 1. Themes
-2. More Bell Sounds (in developement)
-3. Better time selection
-4. Linux Support
+2. Better time selection
+3. Linux Support
 
 ---
 > This project is a better and revamped version of my old app called [Pomonotch](https://github.com/Akshay-V2/PomoNotch). Pomotop improves on Pomonotch with a better codebase and a svelte based frontend
