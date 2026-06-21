@@ -245,9 +245,11 @@ body {
     height: 29px;
     background-color: rgba(255, 255, 255, 0.1);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     font-weight: 800;
     font-size: 20px;
     border-radius: 6px;
+    overflow: hidden;
 }

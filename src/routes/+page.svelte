@@ -24,6 +24,10 @@
     let currentSound = $state(soundIndex[soundSelectedIndex]);
 
     function soundSelectBackward() {
+        if (currentSound.index != 0) {
+            currentSound.sound?.pause();
+            currentSound.sound.currentTime = 0;
+        }
         soundSelectedIndex =
             (soundSelectedIndex - 1 + soundIndex.length) % soundIndex.length;
         currentSound = soundIndex[soundSelectedIndex];
@@ -31,6 +35,10 @@
     }
 
     function soundSelectForward() {
+        if (currentSound.index != 0) {
+            currentSound.sound?.pause();
+            currentSound.sound.currentTime = 0;
+        }
         soundSelectedIndex = (soundSelectedIndex + 1) % soundIndex.length;
         currentSound = soundIndex[soundSelectedIndex];
         currentSound.sound?.play();
@@ -226,7 +234,9 @@
                 >
                     <img src="/icons/CaretLeft.svg" alt="left" />
                 </button>
-                <div class="bell-sound-display">{currentSound.index}</div>
+                <div class="bell-sound-display">
+                    {currentSound.index}
+                </div>
                 <button
                     aria-label="sound left"
                     class="bell-sound-button flipped"
