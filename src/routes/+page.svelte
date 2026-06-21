@@ -21,6 +21,8 @@
         { index: 2, sound: analogBellAudio },
     ];
     let soundSelectedIndex = $state(1);
+    soundSelectedIndex =
+        Number(localStorage.getItem("soundSelectedIndex")) ?? 1;
     let currentSound = $state(soundIndex[soundSelectedIndex]);
 
     function soundSelectBackward() {
@@ -31,6 +33,10 @@
         soundSelectedIndex =
             (soundSelectedIndex - 1 + soundIndex.length) % soundIndex.length;
         currentSound = soundIndex[soundSelectedIndex];
+        localStorage.setItem(
+            "soundSelectedIndex",
+            soundSelectedIndex.toString(),
+        );
         currentSound.sound?.play();
     }
 
@@ -41,6 +47,10 @@
         }
         soundSelectedIndex = (soundSelectedIndex + 1) % soundIndex.length;
         currentSound = soundIndex[soundSelectedIndex];
+        localStorage.setItem(
+            "soundSelectedIndex",
+            soundSelectedIndex.toString(),
+        );
         currentSound.sound?.play();
     }
 
@@ -157,7 +167,10 @@
 
 <div class="mini-mode-text">{formatTime(currentTime)}</div>
 
-<div class={isTimerRunning ? "container timer-running" : "container"}>
+<div
+    class={isTimerRunning ? "container timer-running" : "container"}
+    role="timer"
+>
     <img class="decor" src="/Decor.svg" alt="decor" />
 
     <div class={isExpanded ? "pomoBX open" : "pomoBX"}>
