@@ -58,7 +58,7 @@
         }
     }
 
-    // mute
+    // mute (not in prod)
     let isMuted = $state(false);
     // async function toggleMute() {
     //     if (isMuted) {
