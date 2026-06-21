@@ -60,13 +60,13 @@
 
     // mute
     let isMuted = $state(false);
-    async function toggleMute() {
-        if (isMuted) {
-            isMuted = false;
-        } else {
-            isMuted = true;
-        }
-    }
+    // async function toggleMute() {
+    //     if (isMuted) {
+    //         isMuted = false;
+    //     } else {
+    //         isMuted = true;
+    //     }
+    // }
 
     // pomodoro
     const presetTime = 1500;
