@@ -30,7 +30,6 @@ npm run tauri build
 ```
 
 ## Roadmap / Upcoming features
-- ~~savefile for options~~ (Options are now persistent) ***[yet to be in release build]***
 - better animations
 
 ---
