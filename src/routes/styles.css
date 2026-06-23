@@ -30,6 +30,30 @@ body {
     }
 }
 
+@keyframes slideIn {
+    0% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+@keyframes slideOut {
+    0% {
+        opacity: 100%;
+    }
+    100% {
+        opacity: 0%;
+    }
+}
+
+.slideInAnim {
+    animation: slideIn;
+    animation-duration: 500ms;
+    animation-timing-function: cubic-bezier(0.31, 0.06, 0.15, 1);
+}
+
 .pomoBX {
     width: 150px;
     height: 41px;
